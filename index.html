@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Learn My Data</title>
+    <!--Page will request Facebook Login-->
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://mbostock.github.com/d3/d3.v2.js"></script>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+  <!--  <link href="css/one-page-wonder.min.css" rel="stylesheet">-->
+
+  </head>
+
+  <body>
+    <div id="fb-root"></div>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 'APPID',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.2'
+    });
+
+    FB.AppEvents.logPageView();
+
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+
+</script>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Learn My Data</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Learn More</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white">
+      <div class="masthead-content">
+        <div class="container">
+          <h1 class="masthead-heading mb-0">Learn My Data</h1>
+          <h2 class="masthead-subheading mb-0" style="font-size:x-large;font-style:italic;">learn data science through your own data</h2>
+          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div><br>
+
+        <!--  <a href="#stage" class="btn btn-primary btn-xl rounded-pill mt-3" style="width:50%;" onclick="populate('cnn')">How does Facebook recognize my face?</a><br>
+          <a href="#stage" class="btn btn-primary btn-xl rounded-pill mt-3" style="width:50%;" onclick="populate('kmeans')">How does Faceook recommend friends for me?</a><br>
+          <a href="#stage" class="btn btn-primary btn-xl rounded-pill mt-3" style="width:50%;" onclick="populate('testing')" >Experimental</a><br>-->
+          <!--https://goo.gl/forms/FpIwDRK0xaASf2nI2-->
+          <a href="https://forms.gle/xya1q2DNaz7EUibp7" target="_blank" class="btn btn-primary btn-xl rounded-pill mt-3" style="width:50%;">Pre-Test</a><br>
+          <a href="#stage" class="btn btn-primary btn-xl rounded-pill mt-3" style="width:50%;" onclick="populate('regression')" >Linear Regression</a><br>
+          <br>
+
+          <!--https://goo.gl/forms/1a95WIdDnkOZOocX2-->
+
+
+
+        </div>
+      </div>
+      <div class="bg-circle-1 bg-circle"></div>
+      <div class="bg-circle-2 bg-circle"></div>
+      <div class="bg-circle-3 bg-circle"></div>
+      <div class="bg-circle-4 bg-circle"></div>
+    </header>
+
+    <!--Here is the main stage, where the tutorial happens.-->
+    <!--Probably going to populate with d3 animations-->
+
+    <section id='stage' style="display:none;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" id="the_pic" src="img/linreg.png" alt="">
+
+                <center><div id="chartContainer" style="height: 370px; width: 100%;"><img id="pic_inside"></img></div><div id="example-table"></div></center>
+                <br>
+                <button class = "btn btn-primary btn-x2 rounded-pill mt-3"id="back" style="display:none;margin-right:8%;">Back</button>
+                <button class = "btn btn-primary btn-x2 rounded-pill mt-3"id="next" style="display:none;">Next</button>
+                <button class = "btn btn-primary btn-x2 rounded-pill mt-3"id="ok" style="display:none; margin-left:5%;">Reset</button>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+              <h2 id="tutorial_name" class="display-4">Tutorial name</h2>
+              <p id="the_text" class="animated fadeIn">tutorial here</p>
+              <div id="container"></div>
+              <div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+  <div id="preTest" style="display:none;">
+    <center>
+      <br>
+      <form>
+        <h4>Have you heard of 'machine learning'? What is it?</h4>
+        <textarea id="whatis" rows="4" cols="60"></textarea>
+      </form><br><hr>
+      <form>
+        <h4>What is your experience with Data Science/Programming/Statistics?</h4>
+        <textarea id="experience" rows="4" cols="60"></textarea>
+      </form><br><hr>
+      <form>
+        <h4>Are you interested in learning more about machine learning?</h4>
+        <textarea id="interested" rows="4" cols="60"></textarea>
+      </form><br><hr>
+      <form>
+        <h4>Are you interested in learning more about Social Media uses and works with your data?</h4>
+        <textarea id="socialmedia" rows="4" cols="60"></textarea>
+      </form><br>
+      <button id="next" class="btn btn-primary btn-x1 rounded-pill mt-3">NEXT</button>
+
+    </center>
+  </div><br>
+    <div id="postTest" style="display:none;">
+      <center>
+
+        <form class="likert">
+          <br>
+          <h3>This tutorial was relevant for me.</h3>
+          <input type="radio" name ="relevant" value="Strongly Disagree"> Strongly Disagree  <input type="radio" name="relevant" value="Disagree"> Disagree <input type="radio" name="relevant" value="Neither"> Neither Agree/Disagree <input type="radio" name="relevant" value="Agree"> Agree <input type="radio" name="relevant" value="Strongly Agree"> Strongly Agree
+        </form><br><hr>
+        <form class="likert">
+          <h3>This tutorial was interesting for me.</h3>
+          <input type="radio" name ="interesting" value="Strongly Disagree"> Strongly Disagree  <input type="radio" name="interesting" value="Disagree"> Disagree <input type="radio" name="interesting" value="Neither"> Neither Agree/Disagree <input type="radio" name="interesting" value="Agree"> Agree <input type="radio" name="interesting" value="Strongly Agree"> Strongly Agree
+        </form><br><hr>
+        <form class="likert">
+          <h3>I want to learn more about this data, or other data like it.</h3>
+          <input type="radio" name ="learnmore" value="Strongly Disagree"> Strongly Disagree  <input type="radio" name="learnmore" value="Disagree"> Disagree <input type="radio" name="learnmore" value="Neither"> Neither Agree/Disagree <input type="radio" name="learnmore" value="Agree"> Agree <input type="radio" name="learnmore" value="Strongly Agree"> Strongly Agree
+        </form><br><hr>
+        <form class="likert">
+          <h3>Learning about Linear Regression was hard.</h3>
+          <input type="radio" name ="hard" value="Strongly Disagree"> Strongly Disagree  <input type="radio" name="hard" value="Disagree"> Disagree <input type="radio" name="hard" value="Neither"> Neither Agree/Disagree <input type="radio" name="hard" value="Agree"> Agree <input type="radio" name="hard" value="Strongly Agree"> Strongly Agree
+        </form><br><hr>
+        <form class="likert">
+          <h3>Learning about Linear Regression was enjoyable.</h3>
+          <input type="radio" name ="enjoy" value="Strongly Disagree"> Strongly Disagree  <input type="radio" name="enjoy" value="Disagree"> Disagree <input type="radio" name="enjoy" value="Neither"> Neither Agree/Disagree <input type="radio" name="enjoy" value="Agree"> Agree <input type="radio" name="enjoy" value="Strongly Agree"> Strongly Agree
+        </form><br>
+
+        <button id="next" class="btn btn-primary btn-x1 rounded-pill mt-3">NEXT</button>
+
+      </center>
+      </div>
+
+      <div id="myDiv" style="display:none">
+        <center>
+      <table id="myTabl" >
+      <tr>
+          <td>Number of Likes</td>
+          <td>Number of Comments</td>
+      </tr>
+      <tr>
+          <td><input id='x1'></td>
+          <td><input id='y1'></td>
+      </tr>
+      <tr>
+        <td><input id='x2'></td>
+        <td><input id='y2'></td>
+      </tr>
+
+    </table>
+    <button id="sub" class="btn btn-primary btn-x1 rounded-pill mt-3" onclick="grab_cells()">SUBMIT</button>
+  </center><br>
+  </div>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small">PersonalML &copy;  2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <link href="https://unpkg.com/tabulator-tables@4.2.0/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.2.0/dist/js/tabulator.min.js"></script>
+    <script src="task.js"></script>
+    <script src="regression.js"></script>
+    <script src="gradientdescent.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

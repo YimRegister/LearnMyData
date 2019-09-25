@@ -1,0 +1,35 @@
+Need to measure prior linear regression knowledge as exclusion criteria
+• How’s the data going to get in there? Input in a table. (resolved)
+• “Linear Regression” slide: something has to change about the visualization (resolved)
+• Add a self-regulation prompt to engage them in the material
+• Need to add the posts on hover over the scatter plot
+• What kind of hover data would the control condition have, if any? Important question about the intervention.
+• “Take some time to hover...” -> give them a task rather than leaving it open ended (resolved)
+• “How many Comments will a post get?” Is this a prompt? Be more explicit and be consistent with the bold on the last page. (resolved)
+• “You may have heard of...” You need a transition from the last page. “How did you make the prediction? Well here’s how machine learning makes it.”(resolved)
+• “Do you think your data could be linear”? Turn this into an actual task where they provide.
+• “betwen” (resolved)
+• Need to build a dragging behavior.
+• Put on GitHub and make an issue tracker
+• “The line you chose”... add a prompt?
+• “Linear Regression” title is always the same; customize for each page (resolved)
+• Give a task on the “vertical lines” page
+• Add a back button
+• Parameters page: explain why they’re learning, “To really understand how machine learning works, we have to talk about how the line is computed.” (resolved)
+• You’ve explicitly chosen m and b; record your design rationale (resolved)
+• Animate the m and b in the random line page (resolved)
+handle Nans from inputted chart (resolved)
+
+TODO 3/2
+- teach about squares of Residuals
+- add feedback input
+- introduce idea of gradient descent
+
+
+- action items for research
+subject identifier for pre-post tests and way to give those identifiers
+consent form?
+fix if Nans
+remove added_points
+Finishing screen
+Feedback answers
