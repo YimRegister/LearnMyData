@@ -1,4 +1,4 @@
-#Learn My Data
+# Learn My Data
 
 Here is the website that hosts the linear regression tutorial. This tutorial has 2 conditions, and plenty of problems.
 
